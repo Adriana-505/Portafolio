@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lucía Henríquez | Portafolio</title>
+    <meta name="description" content="Portafolio académico y profesional de Lucía Henríquez.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Configuration con la paleta Ocean/Beige -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepOcean: '#0D2B45',
+                        oceanTeal: '#1E5A6E',
+                        seafoam: '#6BA7A0',
+                        sandyBeige: '#DCC8AA',
+                        lightSky: '#B7D4E6'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0D2B45;
+            color: #B7D4E6;
+        }
+
+        /* Efecto hover suave para tarjetas de proyectos */
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(107, 167, 160, 0.15);
+            border-color: #6BA7A0;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-deepOcean text-lightSky antialiased selection:bg-seafoam selection:text-deepOcean">
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 w-full bg-deepOcean/90 backdrop-blur-md z-50 border-b border-oceanTeal/60">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+
+            <!-- Logo -->
+            <a href="#inicio" class="text-xl font-bold text-white tracking-tight hover:opacity-90 transition">
+                Lucía<span class="text-seafoam">.dev</span>
+            </a>
+
+            <!-- Navegación de Escritorio -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#sobre-mi" class="hover:text-seafoam transition">About me</a>
+                <a href="#habilidades" class="hover:text-seafoam transition">Habilities</a>
+                <a href="#proyectos" class="hover:text-seafoam transition">Projects</a>
+                <a href="#experiencia" class="hover:text-seafoam transition">Experience</a>
+                <a href="#contacto" class="border border-seafoam text-seafoam px-5 py-2 rounded-lg hover:bg-seafoam hover:text-deepOcean font-semibold transition">
+                    Contact
+                </a>
+            </div>
+
+            <!-- Botón del menú móvil -->
+            <button id="menu-button" class="md:hidden text-lightSky hover:text-seafoam p-1" aria-label="Abrir menú" aria-expanded="false">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </nav>
+
+        <!-- MENÚ MÓVIL -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-6 pt-2 space-y-4 bg-deepOcean/95 border-b border-oceanTeal text-lightSky">
+            <a href="#sobre-mi" class="block py-1 hover:text-seafoam">About me</a>
+            <a href="#habilidades" class="block py-1 hover:text-seafoam">Habilities</a>
+            <a href="#proyectos" class="block py-1 hover:text-seafoam">Projects</a>
+            <a href="#experiencia" class="block py-1 hover:text-seafoam">Experience</a>
+            <a href="#contacto" class="block py-2 text-seafoam font-semibold">Contact</a>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section id="inicio" class="max-w-6xl mx-auto px-6 pt-40 pb-28">
+
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+
+        <div>
+            <!-- Badge de Estado -->
+            <div class="inline-flex items-center gap-2.5 bg-oceanTeal/40 border border-seafoam/30 rounded-full px-4 py-2 text-xs font-medium text-lightSky mb-7">
+                <span class="w-2.5 h-2.5 bg-seafoam rounded-full animate-pulse"></span>
+                Student · El Salvador
+            </div>
+
+            <p class="text-seafoam font-bold text-sm tracking-wider mb-3">
+                Welcome to my portfolio
+            </p>
+
+            <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight">
+                Hi, I'm <span class="text-seafoam">Lucía.</span>
+            </h1>
+
+            <p class="mt-6 text-lightSky/80 leading-8 text-base md:text-lg">
+                I am passionate about research, technology, and developing projects that create a positive impact on people and communities. I believe in continuous learning and using my skills to contribute to society.
+            </p>
+
+            <div class="flex flex-wrap gap-4 mt-9">
+                <a href="#proyectos"
+                   class="bg-oceanTeal text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-seafoam hover:text-deepOcean transition shadow-md">
+                    View projects
+                </a>
+
+                <a href="#sobre-mi"
+                   class="border border-lightSky/40 text-lightSky font-semibold px-7 py-3.5 rounded-xl hover:bg-lightSky/10 hover:border-lightSky transition">
+                    Learn more
+                </a>
+            </div>
+        </div>
+
+        <!-- CARD -->
+        <div class="bg-yellow-300 backdrop-blur-md rounded-2xl p-6 shadow-2xl border border-lightSky/50 relative overflow-hidden transition-all duration-300 hover:shadow-seafoam/10">
+            
+            <div class="bg-deepOcean rounded-xl p-7 text-white border border-oceanTeal/60 shadow-lg">
+
+                <div class="flex justify-center mb-6 pt-2">
+                    <div class="relative">
+                        <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-seafoam to-oceanTeal blur-sm opacity-70"></div>
+                        <div class="relative w-24 h-24 rounded-full bg-deepOcean flex items-center justify-center overflow-hidden border-2 border-seafoam shadow-inner">
+                            <img src="Images/imagen.jpeg" alt="Lucía Henríquez" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-center text-xl font-bold text-white tracking-wide">
+                    Lucía Henríquez
+                </h3>
+
+                <p class="text-center text-xs font-semibold text-seafoam uppercase tracking-widest mt-1">
+                    Student
+                </p>
+
+                <!-- Lista de datos -->
+                <div class="border-t border-oceanTeal/60 mt-6 pt-5 space-y-3.5 text-sm">
+
+                    <div class="flex justify-between items-center py-1 border-b border-oceanTeal/30">
+                        <span class="text-lightSky/70 font-medium">Location</span>
+                        <span class="text-seafoam font-semibold">San Juan Opico</span>
+                    </div>
+
+                    <div class="flex justify-between items-center py-1 border-b border-oceanTeal/30">
+                        <span class="text-lightSky/70 font-medium">Interests</span>
+                        <span class="text-seafoam font-semibold">Science &amp; society</span>
+                    </div>
+
+                    <div class="flex justify-between items-center py-1">
+                        <span class="text-lightSky/70 font-medium">Focus</span>
+                        <span class="text-seafoam font-semibold">Social impact</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <p class="text-center text-xs font-bold text-deepOcean mt-4 tracking-wide opacity-90">
+                Curiosity, commitment and continuous learning.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+        <!-- SOBRE MÍ -->
+        <section id="sobre-mi" class="bg-oceanTeal/20 py-24 border-y border-oceanTeal/40">
+
+            <div class="max-w-6xl mx-auto px-6">
+
+                <p class="text-seafoam font-bold text-sm tracking-wider uppercase">GET TO KNOW ME</p>
+
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">
+                    About Me
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-14 mt-12">
+
+                    <div class="space-y-5 text-lightSky/90 leading-8">
+                        <p>
+                            I am a student interested in understanding the world around me, learning new things, and participating in initiatives that contribute to the well-being of others.
+                        </p>
+
+                        <p>
+                            I consider myself an organized, observant, and committed person. I enjoy researching, analyzing situations, communicating ideas, and working on projects where I can contribute with different skills.
+                        </p>
+
+                        <p>
+                            My goal is to continue developing academically and professionally, without losing sight of the importance of empathy, justice, and social responsibility.
+                        </p>
+                    </div>
+
+                    <!-- Cuadrícula de pilares -->
+                    <div class="grid grid-cols-2 gap-4">
+
+                        <div class="bg-deepOcean p-6 rounded-xl border border-yellow-300 hover:border-seafoam/50 transition">
+                            <i data-lucide="book-open" class="text-yellow-300 w-7 h-7"></i>
+                            <h3 class="font-bold text-white mt-4 text-lg">Research</h3>
+                            <p class="text-sm text-lightSky/70 mt-2">
+                                Learn, analyze and discover.
+                            </p>
+                        </div>
+
+                        <div class="bg-deepOcean p-6 rounded-xl border border-yellow-300 hover:border-seafoam/50 transition">
+                            <i data-lucide="heart-handshake" class="text-yellow-300 w-7 h-7"></i>
+                            <h3 class="font-bold text-white mt-4 text-lg">Social Impact</h3>
+                            <p class="text-sm text-lightSky/70 mt-2">
+                                Participate in social causes.
+                            </p>
+                        </div>
+
+                        <div class="bg-deepOcean p-6 rounded-xl border border-yellow-300 hover:border-seafoam/50 transition">
+                            <i data-lucide="laptop" class="text-yellow-300 w-7 h-7"></i>
+                            <h3 class="font-bold text-white mt-4 text-lg">Technology</h3>
+                            <p class="text-sm text-lightSky/70 mt-2">
+                                Create digital solutions.
+                            </p>
+                        </div>
+
+                        <div class="bg-deepOcean p-6 rounded-xl border border-yellow-300 hover:border-seafoam/50 transition">
+                            <i data-lucide="users" class="text-yellow-300 w-7 h-7"></i>
+                            <h3 class="font-bold text-white mt-4 text-lg">Collaboration</h3>
+                            <p class="text-sm text-lightSky/70 mt-2">
+                                Learn and work in teams.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- HABILIDADES (SKILLS) -->
+        <section id="habilidades" class="py-24">
+
+            <div class="max-w-6xl mx-auto px-6">
+
+                <p class="text-seafoam font-bold text-sm tracking-wider uppercase">WHAT I CAN OFFER</p>
+
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">
+                    Skills
+                </h2>
+
+                <p class="text-lightSky/80 mt-3 max-w-2xl">
+                    Capabilities I have developed through my academic training, experiences, and participation in various projects.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8 mt-12">
+
+                    <!-- Habilidades Personales -->
+                    <div class="bg-oceanTeal/30 rounded-2xl p-8 border border-yellow-300">
+
+                        <h3 class="font-bold text-white text-xl mb-7 flex items-center gap-2">
+                            <i data-lucide="user" class="text-yellow-300 w-5 h-5"></i>
+                            Personal Skills
+                        </h3>
+
+                        <div class="space-y-4">
+
+                            <div class="flex gap-3.5 items-center">
+                                <i data-lucide="ear" class="text-seafoam w-5 h-5 shrink-0"></i>
+                                <span>Active Listening</span>
+                            </div>
+
+                            <div class="flex gap-3.5 items-center">
+                                <i data-lucide="message-circle" class="text-seafoam w-5 h-5 shrink-0"></i>
+                                <span>Assertive Communication</span>
+                            </div>
+
+                            <div class="flex gap-3.5 items-center">
+                                <i data-lucide="users" class="text-seafoam w-5 h-5 shrink-0"></i>
+                                <span>Leadership and Teamwork</span>
+                            </div>
+
+                            <div class="flex gap-3.5 items-center">
+                                <i data-lucide="calendar-check" class="text-seafoam w-5 h-5 shrink-0"></i>
+                                <span>Organization and Planning</span>
+                            </div>
+
+                            <div class="flex gap-3.5 items-center">
+                                <i data-lucide="lightbulb" class="text-seafoam w-5 h-5 shrink-0"></i>
+                                <span>Problem Solving</span>
+                            </div>
+
+                            <div class="flex gap-3.5 items-center">
+                                <i data-lucide="heart" class="text-seafoam w-5 h-5 shrink-0"></i>
+                                <span>Empathy and Adaptability</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Habilidades Técnicas -->
+                    <div class="bg-oceanTeal/30 rounded-2xl p-8 border border-yellow-300 flex flex-col justify-between">
+
+                        <div>
+                            <h3 class="font-bold text-white text-xl mb-7 flex items-center gap-2">
+                                <i data-lucide="code" class="text-yellow-300 w-5 h-5"></i>
+                                Technical Skills
+                            </h3>
+
+                            <div class="flex flex-wrap gap-2.5">
+                                <span class="bg-deepOcean text-seafoam border border-seafoam/40 px-4 py-2 rounded-lg text-sm font-medium">HTML</span>
+                                <span class="bg-deepOcean text-seafoam border border-seafoam/40 px-4 py-2 rounded-lg text-sm font-medium">Tailwind CSS</span>
+                                <span class="bg-deepOcean text-seafoam border border-seafoam/40 px-4 py-2 rounded-lg text-sm font-medium">English</span>
+                                <span class="bg-deepOcean text-seafoam border border-seafoam/40 px-4 py-2 rounded-lg text-sm font-medium">Excel</span>
+                                <span class="bg-deepOcean text-seafoam border border-seafoam/40 px-4 py-2 rounded-lg text-sm font-medium">Canva</span>
+                                <span class="bg-deepOcean text-seafoam border border-seafoam/40 px-4 py-2 rounded-lg text-sm font-medium">Git Hub</span>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-oceanTeal/80 mt-8 pt-6">
+                            <h4 class="font-semibold text-white mb-2">
+                                Areas of Interest
+                            </h4>
+
+                            <p class="text-sm text-lightSky/80 leading-7">
+                                    Investigación científica · Ciencias sociales · Medio ambiente · Tecnología · Educación · Derechos humanos.
+                                </p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PROYECTOS -->
+<section id="proyectos" class="bg-deepOcean py-24 border-t border-oceanTeal/40">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <p class="text-seafoam font-semibold text-sm tracking-wider">My Work</p>
+
+        <h2 class="text-3xl md:text-4xl font-bold text-white mt-3">
+            Important projects
+        </h2>
+
+        <p class="text-lightSky/80 mt-4">
+            Experiences and projects that I have developed, highlighting my skills and abilities in different areas of interest.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-7 mt-12">
+
+            <!-- PROYECTO 1: My Hood -->
+            <article class="project-card relative group bg-deepOcean border border-yellow-300 rounded-2xl p-7 transition-all duration-300 hover:border-seafoam hover:-translate-y-1">
+                
+                <a href="https://superate2014-my.sharepoint.com/:f:/g/personal/adriana_henriquez2026_hilasal_superate_org/IgAPLbHrFZOcTJ51sb_lGGiKAYbypGcnTg4dydKWZTlIf-I?e=xuBjpH" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="absolute inset-0 z-10 rounded-2xl" 
+                   aria-label="Ver proyecto My Hood"></a>
+
+                <div class="flex justify-between items-center">
+                    <div class="bg-oceanTeal p-3 rounded-xl text-seafoam">
+                        <i data-lucide="heart-handshake"></i>
+                    </div>
+                    <span class="text-xs font-bold text-seafoam tracking-wider uppercase">2024</span>
+                </div>
+
+                <h3 class="text-xl font-bold text-white mt-6 group-hover:text-seafoam transition-colors">
+                    My Hood
+                </h3>
+
+                <p class="text-lightSky/80 leading-7 mt-3">
+                    A project focused on promoting community development and social participation through educational initiatives, workshops, and collaborative activities that strengthen local ties and improve quality of life.
+                </p>
+
+                <div class="mt-6 flex flex-wrap gap-2 relative z-20">
+                    <span class="text-xs bg-oceanTeal/50 text-lightSky px-3 py-1.5 rounded-full border border-oceanTeal">Participation</span>
+                    <span class="text-xs bg-oceanTeal/50 text-lightSky px-3 py-1.5 rounded-full border border-oceanTeal">Social Development</span>
+                </div>
+
+            </article>
+
+
+            <!-- PROYECTO 2: MedSpark -->
+            <article class="project-card relative group bg-deepOcean border border-yellow-300 rounded-2xl p-7 transition-all duration-300 hover:border-seafoam hover:-translate-y-1">
+                
+                <a href="https://superate2014-my.sharepoint.com/:f:/g/personal/adriana_henriquez2026_hilasal_superate_org/IgDHUQJyVMcySqfsgH9FQtbNARakvGscXT2vQaDLqXNO4K0?e=CbzlJ5" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="absolute inset-0 z-10 rounded-2xl" 
+                   aria-label="Ver proyecto MedSpark"></a>
+
+                <div class="flex justify-between items-center">
+                    <div class="bg-oceanTeal p-3 rounded-xl text-seafoam">
+                        <i data-lucide="heart-pulse"></i>
+                    </div>
+                    <span class="text-xs font-bold text-seafoam tracking-wider uppercase">2025</span>
+                </div>
+
+                <h3 class="text-xl font-bold text-white mt-6 group-hover:text-seafoam transition-colors">
+                    MedSpark
+                </h3>
+
+                <p class="text-lightSky/80 leading-7 mt-3">
+                    Development of a web platform proposal aimed at facilitating access to healthcare services through a benefits and reimbursement system, benefiting both users and affiliated pharmacies.
+                </p>
+
+                <div class="mt-6 flex flex-wrap gap-2 relative z-20">
+                    <span class="text-xs bg-oceanTeal/50 text-lightSky px-3 py-1.5 rounded-full border border-oceanTeal">Web Development</span>
+                    <span class="text-xs bg-oceanTeal/50 text-lightSky px-3 py-1.5 rounded-full border border-oceanTeal">JavaScript</span>
+                    <span class="text-xs bg-oceanTeal/50 text-lightSky px-3 py-1.5 rounded-full border border-oceanTeal">Tailwind CSS</span>
+                </div>
+
+            </article>
+
+
+            <!-- PROYECTO 3: Routify -->
+            <article class="project-card relative group bg-deepOcean border border-yellow-300 rounded-2xl p-7 transition-all duration-300 hover:border-seafoam hover:-translate-y-1">
+                
+                <a href="https://superate2014-my.sharepoint.com/:f:/g/personal/adriana_henriquez2026_hilasal_superate_org/IgCs84w7JLDBTJlup0-DysaTAekVQdiTVXAQEety692d6y8?e=XmrMuL" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="absolute inset-0 z-10 rounded-2xl" 
+                   aria-label="Ver proyecto Routify"></a>
+
+                <div class="flex justify-between items-center">
+                    <div class="bg-oceanTeal p-3 rounded-xl text-seafoam">
+                        <i data-lucide="monitor"></i>
+                    </div>
+                    <span class="text-xs font-bold text-seafoam tracking-wider uppercase">2026</span>
+                </div>
+
+                <h3 class="text-xl font-bold text-white mt-6 group-hover:text-seafoam transition-colors">
+                    Routify
+                </h3>
+
+                <p class="text-lightSky/80 leading-7 mt-3">
+                    Development of a platform focused on optimizing transportation routes and improving logistical efficiency through the use of optimization algorithms and data analysis.
+                </p>
+
+                <div class="mt-6 flex flex-wrap gap-2 relative z-20">
+                    <span class="text-xs bg-oceanTeal/50 text-lightSky px-3 py-1.5 rounded-full border border-oceanTeal">Frontend</span>
+                    <span class="text-xs bg-oceanTeal/50 text-lightSky px-3 py-1.5 rounded-full border border-oceanTeal">JavaScript</span>
+                    <span class="text-xs bg-oceanTeal/50 text-lightSky px-3 py-1.5 rounded-full border border-oceanTeal">Programming</span>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- EXPERIENCE & COURSES -->
+<section id="experiencia" class="py-24 bg-deepOcean text-white">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <p class="text-seafoam font-semibold text-sm tracking-wider">My trajectory and learning</p>
+
+        <h2 class="text-3xl md:text-4xl font-bold text-white mt-3">
+            Courses and Academic Formation
+        </h2>
+
+        <p class="text-lightSky/80 mt-4 max-w-2xl">
+            Continuous learning and professional development through specialized training and academic courses.
+        </p>
+
+        <div class="mt-12 grid md:grid-cols-2 gap-7">
+
+            <!-- CURSO 1: Down Syndrome -->
+            <div class="bg-deepOcean border border-yellow-300 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:border-seafoam">
+                <div>
+                    <span class="text-xs font-bold text-seafoam tracking-wider uppercase bg-oceanTeal/40 px-3 py-1 rounded-full border border-oceanTeal/50 inline-block mb-4">
+                        Certification / Curse 2026
+                    </span>
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Down Syndrome
+                    </h3>
+                    <p class="text-lightSky/80 leading-relaxed text-sm mb-6">
+                        Course focused on understanding Down Syndrome, its characteristics, and strategies for supporting individuals with this condition in various aspects of life.
+                    </p>
+                </div>
+
+                <!-- Miniatura del diploma -->
+                <div class="w-full">
+                    <a href="Images/Sd.jpg" target="_blank" class="block group relative overflow-hidden rounded-xl border border-oceanTeal/60 shadow-md">
+                        <img src="Images/Sd.jpg" alt="Diploma Down Syndrome" class="w-full h-36 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-deepOcean/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-xs font-bold text-white bg-oceanTeal/90 px-3 py-1.5 rounded-lg border border-seafoam shadow">
+                                Expand diploma
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CURSO 2: Care and Attention of the Elderly -->
+            <div class="bg-deepOcean border border-yellow-300 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:border-seafoam">
+                <div>
+                    <span class="text-xs font-bold text-seafoam tracking-wider uppercase bg-oceanTeal/40 px-3 py-1 rounded-full border border-oceanTeal/50 inline-block mb-4">
+                        Certification / Curse 2026
+                    </span>
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Care and Attention of the Elderly
+                    </h3>
+                    <p class="text-lightSky/80 leading-relaxed text-sm mb-6">
+                        Course on the care and attention of elderly people, including aspects of health, well-being and emotional support.
+                    </p>
+                </div>
+
+                <!-- Miniatura del diploma -->
+                <div class="w-full">
+                    <a href="Images/Ca.jpg" target="_blank" class="block group relative overflow-hidden rounded-xl border border-oceanTeal/60 shadow-md">
+                        <img src="Images/Ca.jpg" alt="Diploma Elderly Care" class="w-full h-36 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-deepOcean/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-xs font-bold text-white bg-oceanTeal/90 px-3 py-1.5 rounded-lg border border-seafoam shadow">
+                                Expand diploma
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CURSO 3: Environment and Brain Development -->
+            <div class="bg-deepOcean border border-yellow-300 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:border-seafoam">
+                <div>
+                    <span class="text-xs font-bold text-seafoam tracking-wider uppercase bg-oceanTeal/40 px-3 py-1 rounded-full border border-oceanTeal/50 inline-block mb-4">
+                        Certification / Curse 2026
+                    </span>
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Environment and Brain Development of the Child
+                    </h3>
+                    <p class="text-lightSky/80 leading-relaxed text-sm mb-6">
+                        Course focused on understanding how the environment and early experiences influence child brain development and healthy growth.
+                    </p>
+                </div>
+
+                <!-- Miniatura del diploma -->
+                <div class="w-full">
+                    <a href="Images/Dn.jpg" target="_blank" class="block group relative overflow-hidden rounded-xl border border-oceanTeal/60 shadow-md">
+                        <img src="Images/Dn.jpg" alt="Diploma Brain Development" class="w-full h-36 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-deepOcean/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-xs font-bold text-white bg-oceanTeal/90 px-3 py-1.5 rounded-lg border border-seafoam shadow">
+                                Expand diploma
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CURSO 4: Microsoft Excel Expert -->
+            <div class="bg-deepOcean border border-yellow-300 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:border-seafoam">
+                <div>
+                    <span class="text-xs font-bold text-seafoam tracking-wider uppercase bg-oceanTeal/40 px-3 py-1 rounded-full border border-oceanTeal/50 inline-block mb-4">
+                        Certification 2026
+                    </span>
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Microsoft Excel Expert
+                    </h3>
+                    <p class="text-lightSky/80 leading-relaxed text-sm mb-6">
+                        Certification in advanced Excel skills, including data analysis, complex formulas, and automation to improve productivity.
+                    </p>
+                </div>
+
+                <!-- Miniatura del diploma -->
+                <div class="w-full">
+                    <a href="Images/Excel Expert Microsoft 365 Apps_page-0001.jpg" target="_blank" class="block group relative overflow-hidden rounded-xl border border-oceanTeal/60 shadow-md">
+                        <img src="Images/Excel Expert Microsoft 365 Apps_page-0001.jpg" alt="Diploma Excel Expert" class="w-full h-36 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-deepOcean/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-xs font-bold text-white bg-oceanTeal/90 px-3 py-1.5 rounded-lg border border-seafoam shadow">
+                                Expand diploma
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CURSO 5: Microsoft Excel (Estándar) -->
+            <div class="bg-deepOcean border border-yellow-300 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:border-seafoam">
+                <div>
+                    <span class="text-xs font-bold text-seafoam tracking-wider uppercase bg-oceanTeal/40 px-3 py-1 rounded-full border border-oceanTeal/50 inline-block mb-4">
+                        Certification 2025
+                    </span>
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Microsoft Excel
+                    </h3>
+                    <p class="text-lightSky/80 leading-relaxed text-sm mb-6">
+                        Certification demonstrating proficiency in spreadsheet management, data analysis, and advanced functions.
+                    </p>
+                </div>
+
+                <!-- Miniatura del diploma -->
+                <div class="w-full">
+                    <a href="Images/Excel Expert Microsoft 365 Apps_page-0001.jpg" target="_blank" class="block group relative overflow-hidden rounded-xl border border-oceanTeal/60 shadow-md">
+                        <img src="Images/Excel Expert Microsoft 365 Apps_page-0001.jpg" alt="Diploma Excel" class="w-full h-36 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-deepOcean/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-xs font-bold text-white bg-oceanTeal/90 px-3 py-1.5 rounded-lg border border-seafoam shadow">
+                                Expand diploma
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CURSO 6: Leer para soñar (CON DOS DIPLOMAS) -->
+            <div class="bg-deepOcean border border-yellow-300 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:border-seafoam">
+                <div>
+                    <span class="text-xs font-bold text-seafoam tracking-wider uppercase bg-oceanTeal/40 px-3 py-1 rounded-full border border-oceanTeal/50 inline-block mb-4">
+                        Course 2024-2025
+                    </span>
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Read to Dream: My power, my voice
+                    </h3>
+                    <p class="text-lightSky/80 leading-relaxed text-sm mb-6">
+                        Course focused on women's empowerment, self-expression, and the development of personal leadership and communication skills.
+                    </p>
+                </div>
+
+                <!-- Contenedor para mostrar los DOS diplomas lado a lado -->
+                <div class="grid grid-cols-2 gap-3">
+                    <!-- Diploma 1 -->
+                    <a href="Images/2024.jpeg" target="_blank" class="block group relative overflow-hidden rounded-xl border border-yellow-300 shadow-md">
+                        <img src="Images/2024.jpeg" alt="Diploma 1 Leer para soñar" class="w-full h-28 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-deepOcean/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-[10px] font-bold text-white bg-oceanTeal/90 px-2 py-1 rounded border border-seafoam">
+                                Expand diploma 1
+                            </span>
+                        </div>
+                    </a>
+                    <!-- Diploma 2 (Reemplaza 'Images/Tu-Segundo-Diploma.jpg' por la ruta real de tu segundo diploma) -->
+                    <a href="Images/2025.jpeg" target="_blank" class="block group relative overflow-hidden rounded-xl border border-yellow-300 shadow-md">
+                        <img src="Images/2025.jpeg" alt="Diploma 2 Leer para soñar" class="w-full h-28 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-deepOcean/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-[10px] font-bold text-white bg-oceanTeal/90 px-2 py-1 rounded border border-seafoam">
+                                Expand diploma 2
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- FORMACIÓN ACADÉMICA: High School (Ocupa toda la fila inferior o se alinea) -->
+            <div class="md:col-span-2 bg-deepOcean/60 border border-yellow-300 rounded-2xl p-6 flex flex-col md:flex-row gap-6 items-center justify-between">
+                <div class="space-y-2 max-w-2xl">
+                    <div class="inline-flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 bg-seafoam rounded-full animate-pulse"></span>
+                        <span class="text-xs font-bold text-seafoam tracking-wider uppercase">
+                            Academic Formation (In Progress)
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">
+                        High School - General High School Student
+                    </h3>
+                    <p class="text-lightSky/80 text-sm">
+                        C.E René Toruño Steiner (2025 - in progress)
+                    </p>
+                </div>
+
+                <div class="w-full md:w-48 flex flex-col items-center justify-center bg-stone-800/40 border border-stone-700 rounded-xl p-3 text-center flex-shrink-0">
+                    <i data-lucide="book-open" class="w-6 h-6 text-lightSky/50 mb-1"></i>
+                    <span class="text-xs text-lightSky/60">In Progress</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+        <!-- CONTACTO (CONTACT) -->
+        <section id="contacto" class="bg-oceanTeal py-24 border-t border-seafoam/30">
+
+            <div class="max-w-4xl mx-auto px-6 text-center">
+
+                <p class="text-yellow-300 text-xs font-bold tracking-widest uppercase">
+                    LET'S CONNECT <br/><br/>
+
+                    Mail: henriquezadriana505@gmail.com <br/>
+                    Facebook: Adriana Henríquez <br/>
+                    LinkedIn: Adriana Henríquez <br/>
+                </p>
+
+
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-deepOcean py-8 border-t border-oceanTeal/60">
+
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+
+            <p class="text-sm text-lightSky/70">
+                © 2026 Lucía Henríquez. All rights reserved.
+            </p>
+
+            <a href="#inicio" class="border-seafoam px-5 py-2 rounded-lg bg-yellow-300 hover:bg-seafoam text-deepOcean font-semibold transition">Go back</a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Inicializar Iconos de Lucide
+        lucide.createIcons();
+
+        // Control del Menú Móvil
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            menuButton.setAttribute('aria-expanded', String(!isHidden));
+
+            menuButton.innerHTML = isHidden
+                ? '<i data-lucide="menu" class="w-6 h-6"></i>'
+                : '<i data-lucide="x" class="w-6 h-6"></i>';
+
+            lucide.createIcons();
+        });
+
+        // Cerrar menú al hacer clic en un enlace en móviles
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuButton.setAttribute('aria-expanded', 'false');
+                menuButton.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                lucide.createIcons();
+            });
+        });
+    </script>
+
+</body>
+</html>
